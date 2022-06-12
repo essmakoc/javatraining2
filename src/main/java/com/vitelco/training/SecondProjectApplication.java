@@ -1,10 +1,15 @@
 package com.vitelco.training;
 
 import com.vitelco.training.model.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
+@Slf4j
 @SpringBootApplication
 public class SecondProjectApplication {
 
@@ -12,31 +17,19 @@ public class SecondProjectApplication {
 
         SpringApplication.run(SecondProjectApplication.class, args);
 
-        /*
-        Person person = new Person();
-        System.out.println(person.hello("Esma"));
-        */
+        Customer customer = new Customer(1,"Esma", "Koc");
 
-        /*
-        Sample sample = new Sample("abc","90564695656"); //Class -> Object: is an instance of a class
-        // sample.setX("abc"); //value assign
-        //sample.setTel("+90564695656");
+        OrderItem itm1 = new OrderItem(1, "iphone", 1, 15000);
+        OrderItem itm2 = new OrderItem(2, "keyboard", 2, 100);
 
-        System.out.println(sample);
-        */
+        Set<OrderItem> items = new HashSet();
+        items.add(itm1);
+        items.add(itm2);
 
-        /*
-        Customer customer = new Customer();
-        customer.setFirstName("Esma");
-        customer.setLastName("Koc");
-        customer.setId(10001);
-        */
+        Order order = new Order(1, customer, items);
+        order.setItems(items);
 
-        /*
-        Customer customer = new Customer(1001, "Esma", "Koc");
-        System.out.println(customer.placeOrder());
-        */
-
+        log.info("musteri: {} - siparis: {}", customer, order);
 
 
     }
