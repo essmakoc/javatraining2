@@ -12,20 +12,32 @@ public class SecondProjectApplication {
 
         SpringApplication.run(SecondProjectApplication.class, args);
 
+        /*
+        Person person = new Person();
+        System.out.println(person.hello("Esma"));
+        */
+
+        /*
         Sample sample = new Sample("abc","90564695656"); //Class -> Object: is an instance of a class
         // sample.setX("abc"); //value assign
         //sample.setTel("+90564695656");
 
         System.out.println(sample);
+        */
 
-/*
+        /*
         Customer customer = new Customer();
         customer.setFirstName("Esma");
         customer.setLastName("Koc");
         customer.setId(10001);
-*/
+        */
+
+        /*
         Customer customer = new Customer(1001, "Esma", "Koc");
         System.out.println(customer.placeOrder());
+        */
+
+
 
     }
 
